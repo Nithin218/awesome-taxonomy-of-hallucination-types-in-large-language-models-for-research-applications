@@ -62,28 +62,28 @@ Before any reference was added to this repository or the accompanying paper, it 
 
 | Paper | Year | Venue |
 |---|---|---|
-| [Survey of Hallucination in Natural Language Generation](references/references.md#survey-and-review-papers) — Ji et al. | 2023 | ACM Computing Surveys |
-| [A Survey on Hallucination in Large Language Models](references/references.md#survey-and-review-papers) — Huang et al. | 2025 | ACM TOIS |
-| [A Survey of Hallucination in Large Foundation Models](references/references.md#survey-and-review-papers) — Rawte et al. | 2023 | arXiv |
+| [Survey of Hallucination in Natural Language Generation](references.md#survey-and-review-papers) — Ji et al. | 2023 | ACM Computing Surveys |
+| [A Survey on Hallucination in Large Language Models](references.md#survey-and-review-papers) — Huang et al. | 2025 | ACM TOIS |
+| [A Survey of Hallucination in Large Foundation Models](references.md#survey-and-review-papers) — Rawte et al. | 2023 | arXiv |
 
-Full entries with abstracts and DOIs: [`references/references.md`](references/references.md#survey-and-review-papers)
+Full entries with abstracts and DOIs: [`references.md`](references.md#survey-and-review-papers)
 
 ## Foundational Papers
 
 | Paper | Year | Venue |
 |---|---|---|
-| [On Faithfulness and Factuality in Abstractive Summarization](references/references.md#foundational-papers) — Maynez et al. | 2020 | ACL |
-| [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](references/references.md#foundational-papers) — Lewis et al. | 2020 | NeurIPS |
-| [Calibrated Language Models Must Hallucinate](references/references.md#foundational-papers) — Kalai & Vempala | 2024 | arXiv |
-| [Language Models (Mostly) Know What They Know](references/references.md#foundational-papers) — Kadavath et al. | 2022 | arXiv |
+| [On Faithfulness and Factuality in Abstractive Summarization](references.md#foundational-papers) — Maynez et al. | 2020 | ACL |
+| [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](references.md#foundational-papers) — Lewis et al. | 2020 | NeurIPS |
+| [Calibrated Language Models Must Hallucinate](references.md#foundational-papers) — Kalai & Vempala | 2024 | arXiv |
+| [Language Models (Mostly) Know What They Know](references.md#foundational-papers) — Kadavath et al. | 2022 | arXiv |
 
-Full entries: [`references/references.md`](references/references.md#foundational-papers)
+Full entries: [`references.md`](references.md#foundational-papers)
 
 ## Recent Research
 
 Includes detection/mitigation methods (SelfCheckGPT, FActScore, FAVA), benchmarks (HaluEval, TruthfulQA, RAGTruth, Med-HALT), and domain applications (legal hallucination, medical citation fabrication, mental-health topic-familiarity effects).
 
-Full categorized list: [`references/references.md`](references/references.md)
+Full categorized list: [`references.md`](references.md)
 
 ---
 
@@ -91,25 +91,25 @@ Full categorized list: [`references/references.md`](references/references.md)
 
 5 verified datasets — HaluEval, TruthfulQA, RAGTruth, Med-HALT, FAVA-Data — each with source, description, application, and link.
 
-[View Datasets](datasets/datasets.md)
+[View Datasets](datasets.md)
 
 ## Tools and Libraries
 
 6 verified tools — SelfCheckGPT, FActScore, FAVA, Crossref API, Semantic Scholar API, DOI.org resolver.
 
-[View Tools](tools/tools.md)
+[View Tools](tools.md)
 
 ## GitHub Implementations
 
 8 verified official implementations tied to specific published papers, selected for documentation quality, maintenance activity, and reproducibility.
 
-[View Implementations](implementations/github-repositories.md)
+[View Implementations](github-repositories.md)
 
 ## Tutorials and Learning Resources
 
 5 verified resources — curated paper lists, the DAIR.AI Prompt Engineering Guide, and official Crossref/PubMed documentation used for citation verification.
 
-[View Tutorials](tutorials/tutorials.md)
+[View Tutorials](tutorials.md)
 
 ---
 
@@ -119,20 +119,13 @@ Full categorized list: [`references/references.md`](references/references.md)
 awesome-llm-hallucination-research/
 ├── README.md
 ├── LICENSE
-├── paper/
-│   └── AI_Assisted_Research_Paper.docx
-├── citation-audit/
-│   └── Citation_Integrity_Audit.pdf
-├── references/
-│   └── references.md
-├── datasets/
-│   └── datasets.md
-├── tools/
-│   └── tools.md
-├── implementations/
-│   └── github-repositories.md
-└── tutorials/
-    └── tutorials.md
+├── hallucination_taxonomy_paper.docx
+├── Lab_1_AI_Assisted_Citation_Integrity_Audit-2.pdf
+├── references.md
+├── datasets.md
+├── tools.md
+├── github-repositories.md
+└── tutorials.md
 ```
 
 ---
