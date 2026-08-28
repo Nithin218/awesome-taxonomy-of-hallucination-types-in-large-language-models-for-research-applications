@@ -54,7 +54,7 @@ Before any reference was added to this repository or the accompanying paper, it 
 
 **Result: 25/25 references verified. 0 fabricated. 0 metadata mismatches.**
 
-[View Audit](citation-audit/Citation_Integrity_Audit.pdf)
+[View Audit](Lab_1_AI_Assisted_Citation_Integrity_Audit-2.pdf)
 
 ---
 
