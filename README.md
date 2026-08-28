@@ -1,10 +1,8 @@
-# awesome-taxonomy-of-hallucination-types-in-large-language-models-for-research-applications
-A taxonomy categorizing hallucination types in large language models, with a focus on their causes, characteristics, and implications for research applications.
 # Awesome LLM Hallucination in Research Applications
 
-A curated collection of research papers, datasets, tools, implementations, and learning resources on the topic of **hallucination in large language models, with a focus on research and scholarly-communication applications** — including citation fabrication, finding misattribution, and citation-integrity verification.
+A curated collection of research papers, datasets, tools, implementations, and learning resources on **hallucination in large language models (LLMs), with a focus on research and scholarly-communication applications** — including citation fabrication, finding misattribution, and citation-integrity verification.
 
-This repository accompanies an AI-assisted research paper on the same topic and documents the full curation and verification process, including an independent citation-integrity audit of every reference used.
+This repository accompanies an AI-assisted research paper on the same topic and documents the curation and verification process, including an independent citation-integrity audit of every reference used.
 
 ---
 
@@ -26,23 +24,23 @@ This repository accompanies an AI-assisted research paper on the same topic and 
 
 ## Overview
 
-Large language models (LLMs) are increasingly used across the research lifecycle — literature synthesis, hypothesis generation, citation retrieval, and manuscript drafting. Their tendency to produce fluent but unfounded content, known as **hallucination**, poses a distinct threat to research integrity: fabricated citations, misattributed findings, and invented statistics can enter the scholarly record with a false appearance of credibility.
+Large language models are increasingly used across the research lifecycle — literature synthesis, hypothesis generation, citation retrieval, and manuscript drafting. Their tendency to produce fluent but unfounded content, known as **hallucination**, poses a distinct threat to research integrity: fabricated citations, misattributed findings, and invented statistics can enter the scholarly record with a false appearance of credibility.
 
 This repository organizes the literature and tooling around three questions:
 
 1. **What kinds of hallucination occur**, and how should they be classified? (See the [taxonomy paper](#ai-assisted-research-paper).)
-2. **How prevalent is it in research-relevant contexts?** Documented rates range from single digits up to 88% depending on model, domain, and topic familiarity — see [Chelli et al. (2024)](references/references.md), [Dahl et al. (2024)](references/references.md), and [Linardon et al. (2025)](references/references.md).
-3. **How can it be detected, mitigated, and independently verified before it reaches a published paper?** See [Tools](#tools-and-libraries) and the [Citation Integrity Audit](#citation-integrity-audit).
+2. **How prevalent is it in research-relevant contexts?** Reported rates vary substantially depending on model, domain, topic familiarity, and evaluation methodology. Examples are discussed in [Walters & Wilder (2023)](#foundational-and-research-papers), [Chelli et al. (2024)](#foundational-and-research-papers), [Dahl et al. (2024)](#foundational-and-research-papers), and [Linardon et al. (2025)](#foundational-and-research-papers).
+3. **How can it be detected, mitigated, and independently verified before it reaches a published paper?** See [Tools and Libraries](#tools-and-libraries) and the [Citation Integrity Audit](#citation-integrity-audit).
 
-Key problems covered in this collection include: fabricated bibliographic citations (real-looking authors, journals, and DOIs attached to nonexistent papers), metadata mismatches (a real DOI pointing to the wrong article), finding misattribution (citing a real paper for a conclusion it did not reach), and the persistence of hallucination even under retrieval-augmented generation. Major directions covered include zero-resource detection (SelfCheckGPT), atomic fact verification (FActScore), fine-grained detect-and-edit systems (FAVA), and domain-specific benchmarking (legal and medical hallucination studies).
+Key problems covered in this collection include fabricated bibliographic citations, metadata mismatches, finding misattribution, numerical/statistical hallucination, methodological/reasoning hallucination, and domain-specific professional hallucination. Major technical directions include zero-resource detection (**SelfCheckGPT**), atomic fact verification (**FActScore**), fine-grained detect-and-edit systems (**FAVA**), retrieval-augmented generation (**RAG**), and domain-specific benchmarking such as **HaluEval** and **Med-HALT**.
 
 ---
 
 ## AI-Assisted Research Paper
 
-**A Taxonomy of Hallucination Types in Large Language Models for Research Applications**
+### A Taxonomy of Hallucination Types in Large Language Models for Research Applications
 
-A synthesis of the hallucination literature into a three-axis taxonomy — foundational distinctions (intrinsic/extrinsic, factuality/faithfulness), content-level categories (entity, relational, invented, contradictory, unverifiable, incomplete), and research-specific manifestations (citation fabrication, finding misattribution, numerical/statistical hallucination, methodological/reasoning hallucination, domain-specific professional hallucination) — grounded in 25 independently verified sources.
+A synthesis of the hallucination literature into a three-axis taxonomy — foundational distinctions (intrinsic/extrinsic, factuality/faithfulness), content-level categories (entity, relational, invented, contradictory, unverifiable, incomplete), and research-specific manifestations (citation fabrication, finding misattribution, numerical/statistical hallucination, methodological/reasoning hallucination, and domain-specific professional hallucination). The paper also reviews detection, mitigation, challenges, and future research directions.
 
 [View Paper](hallucination_taxonomy_paper.docx)
 
@@ -50,7 +48,7 @@ A synthesis of the hallucination literature into a three-axis taxonomy — found
 
 ## Citation Integrity Audit
 
-Before any reference was added to this repository or the accompanying paper, it was independently checked against an authoritative source (publisher page, DOI/Crossref, PubMed, or the paper's own GitHub repository) and a secondary source (Semantic Scholar, ACL Anthology, or a university research portal). The full methodology, summary statistics, and a per-reference verification table are documented in the audit report.
+Before references were included in the accompanying research paper, they were checked against authoritative bibliographic sources and secondary scholarly sources. The audit report documents the verification methodology, summary results, and per-reference checks.
 
 **Result: 25/25 references verified. 0 fabricated. 0 metadata mismatches.**
 
@@ -60,62 +58,118 @@ Before any reference was added to this repository or the accompanying paper, it 
 
 ## Survey Papers
 
-| Paper | Year | Venue |
-|---|---|---|
-| [Survey of Hallucination in Natural Language Generation](references.md#survey-and-review-papers) — Ji et al. | 2023 | ACM Computing Surveys |
-| [A Survey on Hallucination in Large Language Models](references.md#survey-and-review-papers) — Huang et al. | 2025 | ACM TOIS |
-| [A Survey of Hallucination in Large Foundation Models](references.md#survey-and-review-papers) — Rawte et al. | 2023 | arXiv |
+| Paper | Year | Venue | Link |
+|---|---:|---|---|
+| [Survey of Hallucination in Natural Language Generation](https://doi.org/10.1145/3571730) — Ji et al. | 2023 | ACM Computing Surveys | [DOI](https://doi.org/10.1145/3571730) |
+| [A Survey on Hallucination in Large Language Models](https://doi.org/10.1145/3703155) — Huang et al. | 2025 | ACM Transactions on Information Systems | [DOI](https://doi.org/10.1145/3703155) |
+| [A Survey of Hallucination in Large Foundation Models](https://doi.org/10.48550/arXiv.2309.05922) — Rawte et al. | 2023 | arXiv | [arXiv](https://arxiv.org/abs/2309.05922) |
 
-Full entries with abstracts and DOIs: [`references.md`](references.md#survey-and-review-papers)
+---
 
 ## Foundational Papers
 
-| Paper | Year | Venue |
-|---|---|---|
-| [On Faithfulness and Factuality in Abstractive Summarization](references.md#foundational-papers) — Maynez et al. | 2020 | ACL |
-| [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](references.md#foundational-papers) — Lewis et al. | 2020 | NeurIPS |
-| [Calibrated Language Models Must Hallucinate](references.md#foundational-papers) — Kalai & Vempala | 2024 | arXiv |
-| [Language Models (Mostly) Know What They Know](references.md#foundational-papers) — Kadavath et al. | 2022 | arXiv |
+| Paper | Year | Venue | Link |
+|---|---:|---|---|
+| [On Faithfulness and Factuality in Abstractive Summarization](https://doi.org/10.18653/v1/2020.acl-main.173) — Maynez et al. | 2020 | ACL | [DOI](https://doi.org/10.18653/v1/2020.acl-main.173) |
+| [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://doi.org/10.48550/arXiv.2005.11401) — Lewis et al. | 2020 | NeurIPS | [DOI/arXiv](https://doi.org/10.48550/arXiv.2005.11401) |
+| [Language Models (Mostly) Know What They Know](https://doi.org/10.48550/arXiv.2207.05221) — Kadavath et al. | 2022 | arXiv | [arXiv](https://arxiv.org/abs/2207.05221) |
+| [Calibrated Language Models Must Hallucinate](https://doi.org/10.48550/arXiv.2311.14648) — Kalai & Vempala | 2024 | arXiv | [arXiv](https://arxiv.org/abs/2311.14648) |
 
-Full entries: [`references.md`](references.md#foundational-papers)
+---
+
+## Foundational and Research Papers
+
+| Paper | Year | Main Topic | Link |
+|---|---:|---|---|
+| [SelfCheckGPT: Zero-resource Black-box Hallucination Detection for Generative Large Language Models](https://doi.org/10.18653/v1/2023.emnlp-main.557) — Manakul et al. | 2023 | Consistency-based detection | [DOI](https://doi.org/10.18653/v1/2023.emnlp-main.557) |
+| [FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation](https://arxiv.org/abs/2305.14251) — Min et al. | 2023 | Atomic fact verification | [arXiv](https://arxiv.org/abs/2305.14251) |
+| [HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2305.11747) — Li et al. | 2023 | Hallucination benchmark | [arXiv](https://arxiv.org/abs/2305.11747) |
+| [Fine-grained Hallucination Detection and Editing for Language Models](https://doi.org/10.48550/arXiv.2401.06855) — Mishra et al. | 2024 | Detection and editing / FAVA | [arXiv](https://arxiv.org/abs/2401.06855) |
+| [Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation](https://arxiv.org/abs/2302.09664) — Kuhn et al. | 2023 | Semantic uncertainty | [arXiv](https://arxiv.org/abs/2302.09664) |
+| [Hallucination Rates and Reference Accuracy of ChatGPT and Bard for Systematic Reviews](https://doi.org/10.2196/53164) — Chelli et al. | 2024 | Citation reliability | [DOI](https://doi.org/10.2196/53164) |
+| [Fabrication and Errors in the Bibliographic Citations Generated by ChatGPT](https://doi.org/10.1038/s41598-023-41032-5) — Walters & Wilder | 2023 | Citation fabrication | [DOI](https://doi.org/10.1038/s41598-023-41032-5) |
+| [Exploring the Boundaries of Reality: Investigating the Phenomenon of Artificial Intelligence Hallucination in Scientific Writing through ChatGPT References](https://doi.org/10.7759/cureus.37432) — Athaluri et al. | 2023 | Scientific citation hallucination | [DOI](https://doi.org/10.7759/cureus.37432) |
+| [High Rates of Fabricated and Inaccurate References in ChatGPT-generated Medical Content](https://doi.org/10.7759/cureus.39238) — Bhattacharyya et al. | 2023 | Medical citation hallucination | [DOI](https://doi.org/10.7759/cureus.39238) |
+| [A Preliminary Investigation of Fake Peer-reviewed Citations and References Generated by ChatGPT](https://doi.org/10.1080/00330124.2023.2190373) — Day | 2023 | Citation fabrication | [DOI](https://doi.org/10.1080/00330124.2023.2190373) |
+| [Influence of Topic Familiarity and Prompt Specificity on Citation Fabrication in Mental Health Research Using Large Language Models](https://doi.org/10.2196/80371) — Linardon et al. | 2025 | Topic familiarity and citation fabrication | [DOI](https://doi.org/10.2196/80371) |
+| [Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models](https://doi.org/10.1093/jla/laae003) — Dahl et al. | 2024 | Legal hallucination | [DOI](https://doi.org/10.1093/jla/laae003) |
+| [Hallucination-free? Assessing the Reliability of Leading AI Legal Research Tools](https://doi.org/10.48550/arXiv.2405.20362) — Magesh et al. | 2024 | RAG and legal research | [arXiv](https://arxiv.org/abs/2405.20362) |
+| [Med-HALT: Medical Domain Hallucination Test for Large Language Models](https://aclanthology.org/2023.conll-1.25/) — Pal et al. | 2023 | Medical hallucination benchmark | [ACL Anthology](https://aclanthology.org/2023.conll-1.25/) |
+| [RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models](https://aclanthology.org/2024.acl-long.585/) — Niu et al. | 2024 | RAG hallucination dataset | [ACL Anthology](https://aclanthology.org/2024.acl-long.585/) |
+| [Artificial Hallucinations in ChatGPT: Implications in Scientific Writing](https://doi.org/10.7759/cureus.35179) — Alkaissi & McFarlane | 2023 | Scientific writing | [DOI](https://doi.org/10.7759/cureus.35179) |
+| [Survey of Hallucination in Natural Language Generation](https://doi.org/10.1145/3571730) — Ji et al. | 2023 | General hallucination survey | [DOI](https://doi.org/10.1145/3571730) |
+| [A Survey of Hallucination in Large Foundation Models](https://doi.org/10.48550/arXiv.2309.05922) — Rawte et al. | 2023 | Foundation-model hallucination survey | [arXiv](https://arxiv.org/abs/2309.05922) |
+| [A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions](https://doi.org/10.1145/3703155) — Huang et al. | 2025 | LLM hallucination survey | [DOI](https://doi.org/10.1145/3703155) |
+| [Retrieval-Augmented Generation for Large Language Models: A Survey](https://doi.org/10.48550/arXiv.2312.10997) — Gao et al. | 2024 | RAG survey | [arXiv](https://arxiv.org/abs/2312.10997) |
+
+---
 
 ## Recent Research
 
-Includes detection/mitigation methods (SelfCheckGPT, FActScore, FAVA), benchmarks (HaluEval, TruthfulQA, RAGTruth, Med-HALT), and domain applications (legal hallucination, medical citation fabrication, mental-health topic-familiarity effects).
+The paper identifies several active directions:
 
-Full categorized list: [`references.md`](references.md)
+- **Detection:** SelfCheckGPT, FActScore, HaluEval, semantic uncertainty, and fine-grained verification.
+- **Mitigation:** retrieval-augmented generation, fine-grained detect-and-edit systems, specialized factuality training, decoding interventions, and self-verification.
+- **Research-specific reliability:** citation fabrication, finding misattribution, numerical/statistical hallucination, methodological/reasoning hallucination, and professional-domain hallucination.
+- **Open problems:** research-oriented benchmarks, database-integrated citation verification, provenance-aware generation, calibration and abstention, cross-domain/cross-lingual validation, and human-AI verification workflows.
+
+The accompanying paper emphasizes that RAG can reduce hallucination but does **not** eliminate failures of faithfulness to retrieved evidence. fileciteturn0file0L285-L303
 
 ---
 
 ## Datasets
 
-5 verified datasets — HaluEval, TruthfulQA, RAGTruth, Med-HALT, FAVA-Data — each with source, description, application, and link.
+The repository currently highlights five datasets/benchmark resources discussed in the research:
 
-[View Datasets](datasets.md)
+1. **HaluEval** — large-scale hallucination evaluation benchmark.
+2. **TruthfulQA** — benchmark for truthful question answering.
+3. **RAGTruth** — hallucination corpus for retrieval-augmented language models.
+4. **Med-HALT** — medical-domain hallucination benchmark.
+5. **FAVA-Data** — data associated with fine-grained hallucination detection and editing.
+
+See [`datasets.md`](datasets.md) for the curated dataset descriptions and links.
+
+---
 
 ## Tools and Libraries
 
-6 verified tools — SelfCheckGPT, FActScore, FAVA, Crossref API, Semantic Scholar API, DOI.org resolver.
+The repository currently highlights:
 
-[View Tools](tools.md)
+- **SelfCheckGPT** — sampling-based, zero-resource hallucination detection.
+- **FActScore** — atomic fact-level factuality evaluation.
+- **FAVA** — fine-grained hallucination detection and editing.
+- **Crossref API** — bibliographic metadata verification.
+- **Semantic Scholar API** — scholarly literature retrieval and cross-checking.
+- **DOI.org resolver** — DOI resolution and metadata validation.
+
+The paper notes that citation-specific verification remains comparatively dependent on manual or semi-automated checking against bibliographic databases. fileciteturn0file0L281-L284
+
+---
 
 ## GitHub Implementations
 
-8 verified official implementations tied to specific published papers, selected for documentation quality, maintenance activity, and reproducibility.
+Official implementations associated with the research papers can be listed in [`github-repositories.md`](github-repositories.md).
 
-[View Implementations](github-repositories.md)
+The paper specifically discusses SelfCheckGPT, FActScore, FAVA, and related verification approaches; repository links should point to the corresponding official implementations where available.
+
+---
 
 ## Tutorials and Learning Resources
 
-5 verified resources — curated paper lists, the DAIR.AI Prompt Engineering Guide, and official Crossref/PubMed documentation used for citation verification.
+Curated learning resources are listed in [`tutorials.md`](tutorials.md), including resources for:
 
-[View Tutorials](tutorials.md)
+- LLM hallucination research
+- Prompt engineering
+- Citation verification
+- Crossref documentation
+- PubMed documentation
+- Scholarly literature retrieval
 
 ---
 
 ## Repository Structure
 
-```
+```text
 awesome-llm-hallucination-research/
 ├── README.md
 ├── LICENSE
@@ -132,4 +186,4 @@ awesome-llm-hallucination-research/
 
 ## License
 
-Repository content (README, audit, curation notes) is released under the [MIT License](LICENSE). Linked papers, datasets, and third-party repositories retain their own original licenses — see each entry for details. No copyrighted paper PDFs are redistributed in this repository; all papers are linked to their DOI, publisher page, or arXiv record.
+Repository content (README, audit, curation notes) is released under the **MIT License** ([LICENSE](LICENSE)). Linked papers, datasets, and third-party repositories retain their own original licenses — see each entry for details. No copyrighted paper PDFs are redistributed in this repository; papers are linked to their DOI, publisher page, or arXiv/ACL Anthology record.
