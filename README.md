@@ -44,7 +44,7 @@ Key problems covered in this collection include: fabricated bibliographic citati
 
 A synthesis of the hallucination literature into a three-axis taxonomy — foundational distinctions (intrinsic/extrinsic, factuality/faithfulness), content-level categories (entity, relational, invented, contradictory, unverifiable, incomplete), and research-specific manifestations (citation fabrication, finding misattribution, numerical/statistical hallucination, methodological/reasoning hallucination, domain-specific professional hallucination) — grounded in 25 independently verified sources.
 
-[View Paper](paper/AI_Assisted_Research_Paper.docx)
+[View Paper](hallucination_taxonomy_paper.docx)
 
 ---
 
